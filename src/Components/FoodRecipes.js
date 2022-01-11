@@ -1,9 +1,11 @@
 import Axios from 'axios'
 import { useState } from 'react'
 import RecipeCard from './RecipeCard'
+import PopularRecips from './PopularRecipes'
 
 function FoodRecipes() {
 
+    const [defaultRecipe, setDefaultRecipe] = useState("popular")
     const [query, setQuery] = useState("")
     const [recipes, setRecipes] = useState([])
     const [diet, setDiet] = useState("balanced")
@@ -22,13 +24,16 @@ function FoodRecipes() {
     }
 
     return (
+
         <div className="recipe-container">
+            <div className="popular-recipe">
+            </div>
             <h1 className="main-heading">Zen Foods</h1>
             <form className="app-search" onSubmit={onSubmit}>
                 <input 
                    type="text" 
                    placeholder="Enter Ingredient" 
-                   value={query} 
+                   value={query}
                    onChange={(e) => setQuery(e.target.value)} 
                    />
                 <input className="app-submit" type="submit" value="Search"/>
