@@ -1,7 +1,6 @@
 import Axios from 'axios'
 import { useState } from 'react'
 import RecipeCard from './RecipeCard'
-import PopularRecips from './PopularRecipes'
 
 function FoodRecipes() {
 
